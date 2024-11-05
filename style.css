@@ -757,6 +757,10 @@ footer{
         }
     }
 
+    body{
+        color: var(--color-white);
+    }
+
     footer{
         & a{
             text-decoration: underline;
