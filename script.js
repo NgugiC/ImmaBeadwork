@@ -108,3 +108,84 @@ window.addEventListener('load', () => {
         document.body.removeChild('loader');
     });
 });
+
+
+// Order Page
+
+const product = [
+    {
+        id: 1,
+        image: '/Imma/images/Handbags.jpg',
+        title: 'Handbags',
+        price: 'Ksh 450',
+
+    },
+    {
+        id: 2,
+        image: '/Imma/images/Necklaces1.jpg',
+        title: 'Necklaces',
+        price: 'Ksh 450',
+    },
+    {
+        id: 3,
+        image: '/Imma/images/Keyholders.jpg',
+        title: 'Keyholders',
+        price: 'Ksh 450',
+
+    },
+    {
+        id: 4,
+        image: '/Imma/images/Bracelets1.jpg',
+        title: 'Anklets',
+        price: 'Ksh 450',
+
+    },
+    {
+        id: 5,
+        image: '/Imma/images/Sterring_covers.jpg',
+        title: 'Steering covers',
+        price: 'Ksh 450',
+
+    },
+    {
+        id: 6,
+        image: '/Imma/images/Keyholders1.jpg',
+        title: 'Phone covers',
+        price: 'Ksh 450',
+
+    },
+    {
+        id: 7,
+        image: '/Imma/images/Bracelets2.jpg',
+        title: 'Rings',
+        price: 'Ksh 450',
+
+    },
+    {
+        id: 8,
+        image: '/Imma/images/Earrings.jpg',
+        title: 'Earrings',
+        price: 'Ksh 450',
+
+    }
+]
+const categories = [...new Set(product.map((item)=>{
+    return item
+}))]
+
+let cart  = document.getElementById('root')
+cart.innerHTML = categories.map((item)=>{
+    var{image, title, price} = item;
+    return(
+        `<div class="box">
+            <div class="img-box">
+                <img src=${image}></img>
+            </div>
+            <div class="left">
+                <p>${title}</p>
+                <h2>${price}</h2>
+                <button>Add to cart</button>
+            </div>
+        </div>`
+    )
+}).join('')
