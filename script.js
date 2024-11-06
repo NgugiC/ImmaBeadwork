@@ -115,41 +115,41 @@ window.addEventListener('load', () => {
 const product = [
     {
         id: 1,
-        image: '/Imma/images/Handbags.jpg',
+        image: './images/Handbags.jpg',
         title: 'Handbags',
         price: 'Ksh 450',
 
     },
     {
         id: 2,
-        image: '/Imma/images/Necklaces1.jpg',
+        image: './images/Necklaces1.jpg',
         title: 'Necklaces',
         price: 'Ksh 450',
     },
     {
         id: 3,
-        image: '/Imma/images/Keyholders.jpg',
+        image: './images/Keyholders.jpg',
         title: 'Keyholders',
         price: 'Ksh 450',
 
     },
     {
         id: 4,
-        image: '/Imma/images/Bracelets1.jpg',
+        image: './images/Bracelets1.jpg',
         title: 'Anklets',
         price: 'Ksh 450',
 
     },
     {
         id: 5,
-        image: '/Imma/images/Sterring_covers.jpg',
+        image: './images/Sterring_covers.jpg',
         title: 'Steering covers',
         price: 'Ksh 450',
 
     },
     {
         id: 6,
-        image: '/Imma/images/Keyholders1.jpg',
+        image: './images/Keyholders1.jpg',
         title: 'Phone covers',
         price: 'Ksh 450',
 
@@ -163,7 +163,7 @@ const product = [
     },
     {
         id: 8,
-        image: '/Imma/images/Earrings.jpg',
+        image: './images/Earrings.jpg',
         title: 'Earrings',
         price: 'Ksh 450',
 
