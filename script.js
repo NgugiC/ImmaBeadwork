@@ -156,7 +156,7 @@ const product = [
     },
     {
         id: 7,
-        image: '/Imma/images/Bracelets2.jpg',
+        image: './images/Bracelets2.jpg',
         title: 'Rings',
         price: 'Ksh 450',
 
