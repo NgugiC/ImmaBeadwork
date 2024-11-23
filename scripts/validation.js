@@ -111,7 +111,7 @@ document.getElementById('contactForm').addEventListener('submit',function (e){
     formData.append('message', message);
 
     // Send data to PHP script using fetch
-    fetch('http://192.168.1.101/form-handler.php', {
+    fetch('./form-handler.php', {
         method: 'POST',
         body: formData,
     })
