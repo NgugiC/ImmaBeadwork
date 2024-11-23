@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/Logo.svg">
+    <title>Imma Beadwork | Contacts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="wrapper flex">
+            <ul>
+                <li class="logo">  
+                    <a class="flex justify-start" href="index.htm"><img src="./images/Logo.svg" alt="Logo"><span> Imma Beadwork</span></a></li>
+            </ul>
+            <ul class="flex right-nav">
+                <li><a href="index.htm">Home</a></li>
+                <li><a href="about.htm">About</a></li>
+                <li><a href="products.htm">Products</a></li>
+                <li class="active"><a href="contacts.htm">Contacts</a></li>
+                <li><a href="order.htm">Order</a></li>
+            </ul>
+            <i class="block-menu-toggler fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <form class="form">
+            <h1>Leave Us a message</h1>
+            <div class="inputArea flex">
+                <div class="input">
+                    <input type="text" id="name" autocomplete="off">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input">
+                    <input type="email" id="email" autocomplete="off">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input">
+                    <textarea id="message"></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <div class="msg"></div>
+                <input class="formSubmit" type="submit" value="Send">
+            </div>
+        </form>
+
+        <div class="socials center">
+            <a target="_blank" href="https://wa.me/254707505452"><i name="WhatsApp" class="fab fa-2x fa-whatsapp"></i></a>
+            <!-- To Do: Add appropriate Tiktok handle -->
+            <a target="_blank" href="https://www.facebook.com/rahab.ngugi.35"><i name="Facebook" class="fab fa-2x fa-facebook-f"></i></a>
+            <a target="_blank" href="https://www.tiktok.com/rahab.ngugi"><i name="Tiktok" class="fab fa-2x fa-tiktok"></i></a>
+        </div>
+    </div>
+
+    <div class="loader"></div>
+    
+    <footer>
+        <div class="wrapper">
+            <div class="footer-contents flex">
+                <div class="copyright flex">
+                    <span>Copyright <a href="index.htm">Imma Beadwork</a> &copy; 2024</span>
+                    <span>All rights reserved</span>
+                </div>
+                <div class="terms flex">
+                    <span><a href="">Terms &amp; Conditions</a> apply</span>
+                    <span><a href="">Privacy Policy</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

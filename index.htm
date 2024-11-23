@@ -63,7 +63,6 @@
         <div id="tipModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <img src="" alt="Tip Image" id="tipImage" style="max-width: 300px; height: 300px;">
                 <p id="tipText"></p>
             </div>
          </div>
@@ -206,19 +205,19 @@
         <!-- Contacts Section -->
         
         <section class="section-content" id="contacts">
-            <form class="contact-form" id="contactForm" method="post" action="form-handler.php">
+            <form class="contact-form" method="post">
                 <h1>Leave Us a message</h1>
                 <div class="inputArea flex">
                     <div class="input">
-                        <input type="text" id="name" name="name" autocomplete="off" required>
+                        <input type="text" id="name" name="name" autocomplete="off">
                         <label for="name">Name</label>
                     </div>
                     <div class="input">
-                        <input type="email" id="email" name="email" autocomplete="off" required>
+                        <input type="email" id="email" name="email" autocomplete="off">
                         <label for="email" id="emailLabel">Email</label>
                     </div>
                     <div class="input">
-                        <textarea id="message" name="message" required></textarea>
+                        <textarea id="message" name="message"></textarea>
                         <label for="message">Message</label>
                     </div>
                     
@@ -231,7 +230,6 @@
                             <p id="modalMsg"></p>
                         </div>
                      </div>
-                     <div id="responseMessage"></div>
                 </div>
             </form>
         
@@ -284,9 +282,9 @@
             </div>
         </div>
     </footer>
-    <script src="scripts/utils.js" defer></script>
+    <script src="scripts/utils.js"></script>
     <script src="scripts/main.js"></script>
-    <script src="scripts/products.js" defer></script>
+    <script src="scripts/products.js"></script>
     <script src="scripts/cart.js"></script>
     <script src="scripts/validation.js"></script>
     <script src="scripts/randomTip.js"></script>
