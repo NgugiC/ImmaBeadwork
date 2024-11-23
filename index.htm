@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="images/Logo.svg" as="image" type="image/svg+xml" media="(prefers-color-scheme: light)">
+    <link rel="preload" href="images/Logo_white_bg.svg" as="image" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+    <!-- Favicon -->
+    <link id="favicon" rel="icon" href="images/Logo.svg" type="image/svg+xml">
+    <title>Imma Beadwork | Home</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/products.css">
+    <link rel="stylesheet" href="styles/validation.css">
+    <link rel="stylesheet" href="styles/randomTip.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body id="content">
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="wrapper flex">
+            <ul>
+                <li class="logo">  
+                    <a class="flex justify-start" href="index.htm"><img src="images/Logo.svg" alt="Logo"><span> Imma Beadwork</span></a></li>
+            </ul>
+            <ul class="flex right-nav">
+                <li class="menu-item"><a href="#home" aria-label="Go to home section">Home</a></li>
+                <li class="menu-item"><a href="#order">Products</a></li>
+                <li class="menu-item"><a href="#contacts">Contacts</a></li>
+                <li class="menu-item"><a href="#about">About</a></li>
+                <!-- <li class="menu-item"><a href="#products">Products</a></li> -->
+            </ul>
+            <i class="block-menu-toggler fas fa-bars" aria-label="Toggle navigation menu"></i>
+        </div>
+        <div class="wrapper">
+            <div class="categories">
+                <div class="dropdown">
+                    <select name="categories" id="categories">
+                        <optgroup>
+                            <option value="1" disabled selected>Categories</option>
+                        </optgroup>
+                        
+                        <option value="2">Keyholders</option>
+                        <option value="3">Phone Covers</option>
+                        <option value="4">Bracelets</option>
+                    </select>
+                </div>
+                <div class="search">
+                    <input type="search" id="searchBar" placeholder="Search products..." oninput="search_input()">
+                    <i class="fa fa-magnifying-glass" onclick="search_input()"></i>
+                    <div id="search_results"></div>
+                </div>
+                <button class="cart" onclick="toggleCart(true)">
+                    <i class="fa fa-cart-shopping"></i>
+                    <p id="cart-counter">0</p>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Random tip modal stucture -->
+     <div class="wrapper">
+        <div id="tipModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="" alt="Tip Image" id="tipImage" style="max-width: 300px; height: 300px;">
+                <p id="tipText"></p>
+            </div>
+         </div>
+     </div>
+     
+
+    <div class="wrapper">
+        <section class="home-page flex section-content" id="home">
+            <h1>Welcome to Imma Beadwork</h1>
+            <!-- <h2>Experts in making tailor-made beaded bracelets, keyholders, earrings, anklets, phone covers, necklaces, chokers, hair accessories, serviette holders, rings, handbags, ...</h2> -->
+            <p>
+                Are you looking to add a touch of elegance and flair to your everyday accessories? Look no further! Our beadwork offer a unique and custom way to incorporate beautiful beads into your jewelry, clothing and accessories.</p>
+            <p>
+                We create stunning beadwork designs that will help you stand out from the crowd. From intricate patterns to bold statement pieces, we have a wide range of styles to choose from.
+            </p>
+            <p>
+                Whether you are looking to enhance your own personal style or searching for a perfect gift for a loved one, with a pop of color and creativity, our beadwork will exceed your expectations.
+            </p>
+            <p>
+                Contact us to learn more about our beadwork services and start creating your own one-of-a-kind pieces.
+            </p>
+            <!-- <a href="order"><button type="button" class="btn">Order Now</button></a> -->
+        </section>
+        <!-- Products Section -->
+        
+        <!-- <section class="section-content" id="products">
+            <h1>Our Products</h1>
+            <div class="tiles flex">
+                <div class="tile flex-col">
+                    <h3 class="product-title">Handbags</h3>
+                    <span>
+                        <img class="product-img" src="images/Handbags.jpg" alt="image">
+                        <p class="price">Price: Ksh 400</p>
+                    </span>
+                </div>
+                <div class="tile flex-col">
+                    <h3>Necklaces</h3>
+                    <span>
+                        <img src="images/Necklaces1.jpg" alt="image">
+                        <p>Price: Ksh 400</p>
+                    </span>
+                </div>
+                <div class="tile flex-col">
+                    <h3>Hair accessories</h3>
+                    <span>
+                        <img src="images/Keyholders.jpg" alt="image">
+                        <p>Price: Ksh 400</p>
+                    </span>
+                </div>
+                <div class="tile flex-col">
+                    <h3>Anklets</h3>
+                    <span>
+                        <img src="images/Bracelets1.jpg" alt="image">
+                        <p>Price: Ksh 400</p>
+                    </span>
+                </div>
+                <div class="tile flex-col">
+                    <h3>Bracelets</h3>
+                    <span>
+                        <img src="images/Bracelets.jpg" alt="image">
+                        <p>Price: Ksh 400</p>
+                    </span>
+                </div>
+                <div class="tile flex-col">
+                    <h3>Steering covers</h3>
+                    <span>
+                        <img src="images/Sterring_covers.jpg" alt="image">
+                        <p>Price: Ksh 400</p>
+                    </span>
+                </div>
+                <div class="tile flex-col">
+                    <h3>Phone covers</h3>
+                    <span>
+                        <img src="images/Necklaces.jpg" alt="image">
+                        <p>Price: Ksh 400</p>
+                    </span>
+                </div>
+                <div class="tile flex-col">
+                    <h3>Keyholders</h3>
+                    <span>
+                        <img src="images/Keyholders1.jpg" alt="image">
+                        <p>Price: Ksh 400</p>
+                    </span>
+                </div>
+                <div class="tile flex-col">
+                    <h3>Rings</h3>
+                    <span>
+                        <img src="images/Bracelets2.jpg" alt="image">
+                        <p>Price: Ksh 400</p>
+                    </span>
+                </div>
+                <div class="tile flex-col">
+                    <h3>Chokers</h3>
+                    <span>
+                        <img src="images/Bracelets3.jpg" alt="image">
+                        <p>Price: Ksh 400</p>
+                    </span>
+                </div>
+                <div class="tile flex-col">
+                    <h3>Serviette holders</h3>
+                    <span>
+                        <img src="images/Earrings1.jpg" alt="image">
+                        <p>Price: Ksh 400</p>
+                    </span>
+                </div>
+                <div class="tile flex-col">
+                    <h3>Earrings</h3>
+                    <span>
+                        <img src="images/Earrings.jpg" alt="image">
+                        <p>Price: Ksh 400</p>
+                    </span>
+                </div>
+            </div>
+        </section> -->
+
+
+        <!-- Order Section -->
+
+        <section class="section-content" id="order">
+            <h1>Products</h1>
+            <div class="icon"></div>
+            
+            <div id="products1"></div>
+
+            <div id="cartSection" class="cart-main">
+                <h2>Your Cart</h2>
+                <button id="close-cart" onclick="toggleCart(false)">
+                    <i class="fa fa-x fa-2x"></i>
+                </button>
+                <div id="cart"></div>
+                <p class="total" id="grandTotal">
+                    Grand Total: Ksh 0
+                </p>
+                <button class="checkout-btn" onclick="checkout()">Proceed to checkout</button>
+                <p id="cart-message"></p>
+            </div>
+
+        </section>
+
+        <!-- Contacts Section -->
+        
+        <section class="section-content" id="contacts">
+            <form class="contact-form" id="contactForm" method="post" action="form-handler.php">
+                <h1>Leave Us a message</h1>
+                <div class="inputArea flex">
+                    <div class="input">
+                        <input type="text" id="name" name="name" autocomplete="off" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input">
+                        <input type="email" id="email" name="email" autocomplete="off" required>
+                        <label for="email" id="emailLabel">Email</label>
+                    </div>
+                    <div class="input">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    
+                    <input type="submit" value="Send" name="submit">
+
+                    <!-- Modal -->
+                     <div id="modal">
+                        <div id="modalContent">
+                            <!-- <span id="closeModal">&times;</span> -->
+                            <p id="modalMsg"></p>
+                        </div>
+                     </div>
+                     <div id="responseMessage"></div>
+                </div>
+            </form>
+        
+            <div class="socials center">
+                <a target="_blank" href="https://wa.me/254707505452"><i name="WhatsApp" class="fab fa-2x fa-whatsapp"></i></a>
+                <!-- To Do: Add appropriate Tiktok handle -->
+                <a target="_blank" href="https://www.facebook.com/rahab.ngugi.35"><i name="Facebook" class="fab fa-2x fa-facebook-f"></i></a>
+                <a target="_blank" href="https://www.tiktok.com/rahab.ngugi"><i name="Tiktok" class="fab fa-2x fa-tiktok"></i></a>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+
+        <section class="about section-content" id="about">
+            <h1>About Us</h1>
+            <p>
+                We are passionate about creating unique and beautiful beaded jewelry that will add a touch of elegance to your style.
+            </p>
+            <p>
+                Our team of skilled artisans have honed their craft over the years, expertly crafting each piece with precision and care. Whether you are looking for a statement necklace, delicate earrings, or a custom-made bracelet, we have you covered.
+            </p>
+            <p>
+                We believe that jewelry should not only be fashionable but also tell a story. Each bead is carefully selected and hand-threaded to create a piece that is not only visually stunning but also holds sentimental value.
+            </p>
+            <p>
+                We take pride in our attention to detail and commitment to quality ensuring that every piece that leaves our studio is a work of art. Browse our collection and let our beadwork elevate your accessory game to the next level.
+            </p>
+        </section>
+    
+
+
+        <button id="top" onclick="scrollToTop()">
+            <i class="fa fa-arrow-up"></i>Back to Top
+        </button>
+    </div>
+
+    <div class="loader"></div>
+    
+    <footer>
+        <div class="wrapper">
+            <div class="footer-contents flex">
+                <div class="copyright flex">
+                    <span>Copyright &copy; <a href="index.htm">Imma Beadwork</a> 2024</span>
+                    <span>All rights reserved</span>
+                </div>
+                <div class="terms flex">
+                    <span><a href="">Terms &amp; Conditions</a> apply</span>
+                    <span><a href="">Privacy Policy</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/utils.js" defer></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/products.js" defer></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/validation.js"></script>
+    <script src="scripts/randomTip.js"></script>
+</body>
+</html>
