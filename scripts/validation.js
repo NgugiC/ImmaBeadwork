@@ -118,6 +118,7 @@ document.getElementById('contactForm').addEventListener('submit',function (e){
     formData.append('message', message);
 
     // Send data to PHP script using fetch
+    
     fetch('./form-handler.php', {
         method: 'POST',
         body: formData,
