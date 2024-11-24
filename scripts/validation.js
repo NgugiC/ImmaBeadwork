@@ -94,6 +94,13 @@ document.getElementById('contactForm').addEventListener('submit',function (e){
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
 
+    // const inputLabel = document.querySelector('input-label');
+    // if(name){
+    //     inputLabel.style.display = 'none';
+    //     showMessage('Name entered.', 'error');
+    //     return;
+    // }
+
     // Perform validation
     if (!name || !email || !message) {
         showMessage('All fields are required.', 'error');
@@ -124,7 +131,8 @@ document.getElementById('contactForm').addEventListener('submit',function (e){
     .then((data) => {
         console.log('PHP Response: ',data);
         showMessage(data, 'success'); // Display response from PHP
-
+        
+        document.getElementById('contactForm').submit(); // Submit the form
         document.getElementById('contactForm').reset(); // Reset the form
     })
     .catch((error) => {
@@ -141,7 +149,14 @@ function validateEmail(email){
 
 // Display messages
 function showMessage(message, type){
-    const responseDiv = document.getElementById('responseMessage');
+    const responseDiv = document.getElementById('modalMsg');
     responseDiv.textContent = message;
     responseDiv.style.color = type === 'success' ? 'green' : 'red';
+
+    // Clear the message after 3 seconds
+    let messageTimeout;
+    clearTimeout(messageTimeout);
+    messageTimeout = setTimeout(() =>{
+        responseDiv.style.display = 'none';
+    }, 3000);
 }
