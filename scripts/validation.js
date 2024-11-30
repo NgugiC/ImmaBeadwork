@@ -111,7 +111,7 @@ document.getElementById('contactForm').addEventListener('submit',function (e){
     formData.append('message', message);
 
     // Send data to PHP script using fetch
-    fetch('./form-handler.php', {
+    fetch('https://ngugic.github.io/ImmaBeadwork/form-handler.php', {
         method: 'POST',
         body: formData,
     })
