@@ -8,11 +8,10 @@
     <!-- Favicon -->
     <link id="favicon" rel="icon" href="images/Logo.svg" type="image/svg+xml">
     <title>Imma Beadwork | Home</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/products.css">
-    <link rel="stylesheet" href="styles/validation.css">
-    <link rel="stylesheet" href="styles/randomTip.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/products.css">
+    <!-- <link rel="stylesheet" href="styles/validation.css"> -->
+    <link rel="stylesheet" href="styles/randomTip.css">
     <link rel="stylesheet" href="/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -26,9 +25,9 @@
             </ul>
             <ul class="flex right-nav">
                 <li class="menu-item"><a href="#home" aria-label="Go to home section">Home</a></li>
-                <li class="menu-item"><a href="#order" aria-label="Go to products section">Products</a></li>
-                <li class="menu-item"><a href="#contacts" aria-label="Go to contacts section">Contacts</a></li>
-                <li class="menu-item"><a href="#about" aria-label="Go to about section">About</a></li>
+                <li class="menu-item"><a href="#order">Products</a></li>
+                <li class="menu-item"><a href="#contacts">Contacts</a></li>
+                <li class="menu-item"><a href="#about">About</a></li>
                 <!-- <li class="menu-item"><a href="#products">Products</a></li> -->
             </ul>
             <i class="block-menu-toggler fas fa-bars" aria-label="Toggle navigation menu"></i>
@@ -64,7 +63,7 @@
         <div id="tipModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <img alt="Tip Image" id="tipImage" style="max-width: 300px; height: 300px;">
+                <img src="" alt="Tip Image" id="tipImage" style="max-width: 300px; height: 300px;">
                 <p id="tipText"></p>
             </div>
          </div>
@@ -76,7 +75,7 @@
             <h1>Welcome to Imma Beadwork</h1>
             <!-- <h2>Experts in making tailor-made beaded bracelets, keyholders, earrings, anklets, phone covers, necklaces, chokers, hair accessories, serviette holders, rings, handbags, ...</h2> -->
             <p>
-                Are you looking to add a touch of elegance and flair to your everyday accessories? Look no further! Our beadwork offer a unique and custom way to incorporate beautiful beads into your jewelry, clothing and accessories.</p>
+                Are you looking to add a touch of elegance and flair to your everyday accessories? Look no further! Our beadwork offers a unique and custom way to incorporate beautiful beads into your jewelry, clothing and accessories.</p>
             <p>
                 We create stunning beadwork designs that will help you stand out from the crowd. From intricate patterns to bold statement pieces, we have a wide range of styles to choose from.
             </p>
@@ -207,31 +206,36 @@
         <!-- Contacts Section -->
         
         <section class="section-content" id="contacts">
+<<<<<<< HEAD
             <form class="contact-form" id="contactForm" method="post">
+=======
+            <form class="contact-form" id="contactForm" method="post" >
+>>>>>>> 15000c17ba7c73fea24e6d297479f0e1301aa8e2
                 <h1>Leave Us a message</h1>
                 <div class="inputArea flex">
                     <div class="input">
-                        <input type="text" id="name" name="name" autocomplete="off">
-                        <label for="name" class="input-label">Name</label>
+                        <input type="text" id="name" name="name" autocomplete="off" placeholder="Name">
+                        <label for="name">Name</label>
                     </div>
                     <div class="input">
-                        <input type="email" id="email" name="email" autocomplete="off">
+                        <input type="email" id="email" name="email" autocomplete="off" placeholder="Email">
                         <label for="email" id="emailLabel">Email</label>
                     </div>
                     <div class="input">
-                        <textarea id="message" name="message"></textarea>
+                        <textarea id="message" name="message" placeholder="Message"></textarea>
                         <label for="message">Message</label>
                     </div>
                     
                     <input type="submit" value="Send" name="submit">
 
                     <!-- Modal -->
-                     <!-- <div id="modal">
-                        <div id="modalContent"> -->
+                     <div id="modal">
+                        <div id="modalContent">
                             <!-- <span id="closeModal">&times;</span> -->
                             <p id="modalMsg"></p>
-                        <!-- </div>
-                     </div> -->
+                        </div>
+                     </div>
+                     <div id="responseMessage"></div>
                 </div>
             </form>
         
@@ -284,9 +288,9 @@
             </div>
         </div>
     </footer>
-    <script src="scripts/utils.js"></script>
+    <script src="scripts/utils.js" defer></script>
     <script src="scripts/main.js"></script>
-    <script src="scripts/products.js"></script>
+    <script src="scripts/products.js" defer></script>
     <script src="scripts/cart.js"></script>
     <script src="scripts/validation.js"></script>
     <script src="scripts/randomTip.js"></script>
