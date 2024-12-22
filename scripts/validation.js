@@ -111,7 +111,7 @@ document.getElementById('contactForm').addEventListener('submit',function (e){
     formData.append('message', message);
 
     // Send data to PHP script using fetch
-    fetch('http://192.168.1.101/form-handler.php', {
+    fetch('https://github.com/NgugiC/ImmaBeadwork/blob/master/form-handler.php', {
         method: 'POST',
         body: formData,
     })
@@ -145,8 +145,12 @@ function showMessage(message, type){
     responseDiv.textContent = message;
     responseDiv.style.textAlign = 'center';
     responseDiv.style.color = type === 'success' ? 'green' : 'red';
+<<<<<<< HEAD
 
     setTimeout(() => {
         responseDiv.textContent = '';
     }, 3000)
 }
+=======
+}
+>>>>>>> 15000c17ba7c73fea24e6d297479f0e1301aa8e2
