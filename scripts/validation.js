@@ -145,12 +145,8 @@ function showMessage(message, type){
     responseDiv.textContent = message;
     responseDiv.style.textAlign = 'center';
     responseDiv.style.color = type === 'success' ? 'green' : 'red';
-<<<<<<< HEAD
 
     setTimeout(() => {
         responseDiv.textContent = '';
-    }, 3000)
+    }, 3000);
 }
-=======
-}
->>>>>>> 15000c17ba7c73fea24e6d297479f0e1301aa8e2
