@@ -8,7 +8,8 @@ const products = [
         image: './images/Handbags.jpg',
         title: 'Handbags',
         price: 650,
-        description: ''
+        description: '',
+        rating: 5
 
     },
     {
@@ -16,14 +17,16 @@ const products = [
         image: './images/Necklaces1.jpg',
         title: 'Necklaces',
         price: 400,
-        description: 'A beautiful handcrafted beaded necklace.'
+        description: 'A beautiful handcrafted beaded necklace.',
+        rating: 3
     },
     {
         id: 3,
         image: './images/Keyholders.jpg',
         title: 'Keyholders',
         price: 250,
-        description: ''
+        description: '',
+        rating: 4
 
     },
     {
@@ -31,7 +34,8 @@ const products = [
         image: './images/Bracelets11.jpg',
         title: 'Anklets',
         price: 550,
-        description: 'A delicate anklet with beads.'
+        description: 'A delicate anklet with beads.',
+        rating: 2
 
     },
     {
@@ -39,7 +43,8 @@ const products = [
         image: './images/Sterring_covers.jpg',
         title: 'Steering covers',
         price: 450,
-        description: ''
+        description: '',
+        rating: 5
 
     },
     {
@@ -47,7 +52,8 @@ const products = [
         image: './images/Phone covers.jpg',
         title: 'Phone covers',
         price: 1450,
-        description: ''
+        description: '',
+        rating: 4
 
     },
     {
@@ -55,6 +61,8 @@ const products = [
         image: './images/Bracelets2.jpg',
         title: 'Rings',
         price: 150,
+        description: '',
+        rating: 5
 
     },
     {
@@ -62,7 +70,8 @@ const products = [
         image: './images/Earrings.jpg',
         title: 'Earrings',
         price: 500,
-        description: 'Elegant earrings with a beaded design.'
+        description: 'Elegant earrings with a beaded design.',
+        rating: 3
 
     },
     {
@@ -70,7 +79,8 @@ const products = [
         image: './images/Bracelets9.jpg',
         title: 'Chockers',
         price: 700,
-        description: ''
+        description: '',
+        rating: 4
 
     },
     {
@@ -78,7 +88,8 @@ const products = [
         image: './images/Bracelets3.jpg',
         title: 'Serviette holders',
         price: 350,
-        description: ''
+        description: '',
+        rating: 2
 
     },
     {
@@ -86,7 +97,8 @@ const products = [
         image: './images/Bracelets.jpg',
         title: 'Bracelets',
         price: 450,
-        description: 'A charming bracelet made with beads.'
+        description: 'A charming bracelet made with beads.',
+        rating: 5
 
     }
 ];
@@ -103,11 +115,21 @@ function displayProducts(){
         <img src='${product.image}' alt='${product.title}'>
         <h3> ${product.title}</h3>
         <p>Price: ${formatPrice(product.price)}</p>
+        <p>${generateStarRating(product.rating)}</p>
         <button onclick='addToCart(${product.id})'>
         <i class='fa fa-cart-shopping'></i>
         Add to Cart</button>`;
         productsDiv.appendChild(productDiv);
     });
+}
+
+function generateStarRating(rating) {
+    const fullStar = "★"; // Unicode for a filled star
+   // const halfStar = "U+2BEA"; // Unicode for a left halfback star
+    const emptyStar = "☆"; // Unicode for an empty star
+    const maxStars = 5; 
+
+    return fullStar.repeat(rating) + emptyStar.repeat(maxStars - rating);
 }
 
 // Initialize

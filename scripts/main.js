@@ -64,6 +64,12 @@ document.onclick = (e) =>{
         navbarToggler.classList.add('fa-bars');
         navbarToggler.classList.remove('fa-x');
     }
+    
+    // close cart by clicking on any part of the window
+    const cartBtn = document.querySelector('.cart');
+    if (!cartSection.contains(e.target) && !cartBtn.contains(e.target)){
+        cartSection.classList.remove('visible');
+    };
 }
 
 // Remove spinner when page loads
@@ -93,14 +99,13 @@ window.onscroll = function(){
     // show button if user scrolls down 100px from the top
     if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
         backToTop.style.display = 'block';
-        backToTop.style.opacity = '1';
 
         // clear any previous timeout
         clearTimeout(scrollTimeout);
 
         // set a timeout to hide the button after 1 second
         scrollTimeout = setTimeout(() =>{
-            backToTop.style.opacity = '0';
+            backToTop.style.display = 'none';
         }, 1000);
     }
     else{

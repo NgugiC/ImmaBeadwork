@@ -143,5 +143,10 @@ function validateEmail(email){
 function showMessage(message, type){
     const responseDiv = document.getElementById('responseMessage');
     responseDiv.textContent = message;
+    responseDiv.style.textAlign = 'center';
     responseDiv.style.color = type === 'success' ? 'green' : 'red';
+
+    setTimeout(() => {
+        responseDiv.textContent = '';
+    }, 3000)
 }
