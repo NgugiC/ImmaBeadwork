@@ -54,6 +54,7 @@ const currentURL = window.location.href;
 menuItems.forEach(link => {
     if(link.href === currentURL) {
         link.classList.add('active');
+        link.parentElement.classList.add('active');
     }
 });
 
@@ -64,12 +65,12 @@ document.onclick = (e) =>{
         navbarToggler.classList.add('fa-bars');
         navbarToggler.classList.remove('fa-x');
     }
-    
+
     // close cart by clicking on any part of the window
     const cartBtn = document.querySelector('.cart');
-    if (!cartSection.contains(e.target) && !cartBtn.contains(e.target)){
+    if (!cartBtn.contains(e.target) && !cartSection.contains(e.target)){
         cartSection.classList.remove('visible');
-    };
+    }
 }
 
 // Remove spinner when page loads
@@ -81,7 +82,7 @@ window.addEventListener('load', () => {
     // Remove spinner from the code
 
     loader.addEventListener('transitionend DOMContentLoaded', () => {
-        const loader = document.querySelector('.loader');
+        // const loader = document.querySelector('.loader');
         if(loader){
             document.body.removeChild(loader);
         }
@@ -91,6 +92,15 @@ window.addEventListener('load', () => {
     });
 });
 
+
+
+// function to scroll to the top smoothly
+function scrollToTop(){
+    window.scrollTo({
+        top: 0,
+        behaviour: 'smooth'
+    });
+}
 
 
 let scrollTimeout;
@@ -114,13 +124,7 @@ window.onscroll = function(){
     }
 };
 
-// function to scroll to the top smoothly
-function scrollToTop(){
-    window.scrollTo({
-        top: 0,
-        behaviour: 'smooth'
-    });
-}
+
 document.addEventListener('scroll', ()=>{
     const backToTop = document.querySelector('#top');
     backToTop.style.opacity = .8;

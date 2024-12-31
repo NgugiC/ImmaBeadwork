@@ -86,24 +86,34 @@ function toggleCart(showCart){
     }
 }
 
+let cartMsgTimeout;
+
 // Function to handle checkout
 function checkout(){
     const messageDiv = document.querySelector('#cart-message');
+
+    if(!messageDiv){
+        console.error("Element with ID 'cart-message' not found.");
+        return;
+    }
     messageDiv.style.padding = '10px';
-    // messageDiv.style.backgroundColor = 'black';
+    messageDiv.style.display = 'block';
 
     if(cart.length === 0){
-        messageDiv.textContent = 'Your cart is empty. Add some items before checking out';
+        messageDiv.textContent = 'Your cart is empty. Add some items before checking out.';
         messageDiv.style.color = 'red';
     
         setTimeout(() => {
             messageDiv.textContent = '';
         }, 3000)
+        clearTimeout(cartMsgTimeout);
+        messageDiv.style.display = 'block';
         return; //Exit if cart is empty
     }
     else{
         cart = []; //Clear the cart after successful checkout
         displayCart();
+        updateCartCounter();
         updateCartCounter();
         messageDiv.textContent = 'Order successfully placed. Thank you for shopping with Imma Beadwork.';
         messageDiv.style.color = 'rgb(0,255,0)';
@@ -112,4 +122,19 @@ function checkout(){
             messageDiv.textContent = '';
         }, 3000)
     }
+}
+        messageDiv.style.color = 'white';
+        messageDiv.style.display = 'block';
+    }
+
+    if(cartMsgTimeout){
+        clearTimeout(cartMsgTimeout);
+    }
+
+    // Clear the message after 3 seconds
+    cartMsgTimeout = setTimeout(() =>{
+        messageDiv.style.display = 'none';
+    }, 3000);
+
+    console.log('Setting timeout:', cartMsgTimeout);
 }
