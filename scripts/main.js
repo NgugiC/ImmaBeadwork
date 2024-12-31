@@ -65,6 +65,12 @@ document.onclick = (e) =>{
         navbarToggler.classList.add('fa-bars');
         navbarToggler.classList.remove('fa-x');
     }
+
+    // close cart by clicking on any part of the window
+    const cartBtn = document.querySelector('.cart');
+    if (!cartBtn.contains(e.target) && !cartSection.contains(e.target)){
+        cartSection.classList.remove('visible');
+    }
 }
 
 // Remove spinner when page loads
