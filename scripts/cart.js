@@ -123,10 +123,6 @@ function checkout(){
         }, 3000)
     }
 }
-        messageDiv.style.color = 'white';
-        messageDiv.style.display = 'block';
-    }
-
     if(cartMsgTimeout){
         clearTimeout(cartMsgTimeout);
     }
@@ -137,4 +133,3 @@ function checkout(){
     }, 3000);
 
     console.log('Setting timeout:', cartMsgTimeout);
-}
