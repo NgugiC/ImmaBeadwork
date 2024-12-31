@@ -102,6 +102,10 @@ function checkout(){
     if(cart.length === 0){
         messageDiv.textContent = 'Your cart is empty. Add some items before checking out.';
         messageDiv.style.color = 'red';
+    
+        setTimeout(() => {
+            messageDiv.textContent = '';
+        }, 3000)
         clearTimeout(cartMsgTimeout);
         messageDiv.style.display = 'block';
         return; //Exit if cart is empty
@@ -110,7 +114,15 @@ function checkout(){
         cart = []; //Clear the cart after successful checkout
         displayCart();
         updateCartCounter();
+        updateCartCounter();
         messageDiv.textContent = 'Order successfully placed. Thank you for shopping with Imma Beadwork.';
+        messageDiv.style.color = 'rgb(0,255,0)';
+
+        setTimeout(() => {
+            messageDiv.textContent = '';
+        }, 3000)
+    }
+}
         messageDiv.style.color = 'white';
         messageDiv.style.display = 'block';
     }

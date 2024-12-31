@@ -109,14 +109,13 @@ window.onscroll = function(){
     // show button if user scrolls down 100px from the top
     if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
         backToTop.style.display = 'block';
-        backToTop.style.opacity = '1';
 
         // clear any previous timeout
         clearTimeout(scrollTimeout);
 
         // set a timeout to hide the button after 1 second
         scrollTimeout = setTimeout(() =>{
-            backToTop.style.opacity = '0';
+            backToTop.style.display = 'none';
         }, 1000);
     }
     else{

@@ -26,7 +26,7 @@ function showRandomTip(){
     document.getElementById('tipModal').style.display = 'block';
 }
 
-// Close modal when close button is clicked
+// Close tip modal when close button is clicked
 document.querySelector('.close').onclick = function(){
     document.getElementById('tipModal').style.display = 'none';
 }

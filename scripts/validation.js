@@ -152,6 +152,7 @@ function validateEmail(email){
 function showMessage(message, type){
     const responseDiv = document.getElementById('modalMsg');
     responseDiv.textContent = message;
+    responseDiv.style.textAlign = 'center';
     responseDiv.style.color = type === 'success' ? 'green' : 'red';
 
     // Clear the message after 3 seconds
