@@ -94,7 +94,7 @@ function runSearch() {
 
     if(query){
         console.log(`Searching for: ${query}`); //Replace with your search functionality
-        search_input(); //Trigger the existing search function
+        searchInput(); //Trigger the existing search function
     }
     else{
         console.log('Please enter a search query.');
