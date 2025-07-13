@@ -5,7 +5,7 @@ ImmaBeadwork is an e-commerce website for handmade beadwork jewelry. The website
 ## Features
 * Responsive design for optimal viewing on desktop and mobile devices
 * Product catalog with filtering and sorting options
-* Shopping cart functionality with payment gateway integration
+* Shopping cart functionality 
 
 ## Technologies Used
 * Frontend: HTML, CSS, JavaScript
