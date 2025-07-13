@@ -23,4 +23,4 @@ Contributions are welcome! If you'd like to contribute to ImmaBeadwork, please f
 If you have any questions or feedback, please don't hesitate to reach out:
 
 * Email: ngugicornelius51@gmail.com
-* GitHub: https://GitHub.io/NgugiC
+* GitHub: https://github.com/NgugiC
