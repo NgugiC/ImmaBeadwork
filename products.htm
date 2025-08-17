@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="images/Logo.svg" as="image" type="image/svg+xml" media="(prefers-color-scheme: light)">
+    <link rel="preload" href="images/Logo_white_bg.svg" as="image" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+    <!-- Favicon -->
+    <link id="favicon" rel="icon" href="images/Logo.svg" type="image/svg+xml">
+    <title>Imma Beadwork | Products</title>
+    <link rel="stylesheet" href="styles/css/all.min.css">
+    <link rel="stylesheet" href="styles/css/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <meta name="google-site-verification" content="eflNTj5KiQharxuSuzz39nGr0Gx-j0GzHnynmoWbZ68" />
+</head>
+<body id="content">
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="logo-menu wrapper flex">
+            <ul>
+                <li class="logo">  
+                    <a class="flex justify-start" href="index.htm"><img src="images/Logo.svg" alt="Logo"><span> Imma Beadwork</span></a></li>
+            </ul>
+            <ul class="menu flex right-nav">
+                <li class="menu-item"><a href="index.htm" aria-label="Go to home section">Home</a></li>
+                <li class="menu-item"><a href="products.htm">Products</a></li>
+                <li class="menu-item"><a href="contacts.htm">Contacts</a></li>
+                <li class="menu-item"><a href="about.htm">About</a></li>
+            </ul>
+            <div class="block-menu-toggler">
+                <span class="bars" aria-label="Toggle navigation menu"></span>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="categories">
+                <div class="dropdown">
+                    <select name="categories" id="categories">
+                        <optgroup>
+                            <option value="1" disabled selected>Categories</option>
+                        </optgroup>
+                        
+                        <option value="2">Keyholders</option>
+                        <option value="3">Phone Covers</option>
+                        <option value="4">Bracelets</option>
+                    </select>
+                </div>
+                <div class="search">
+                    <input type="search" id="searchBar" placeholder="Search products..." oninput="search_input()">
+                    <i class="icon-search fa fa-magnifying-glass" onclick="search_input()"></i>
+                    <div id="search_results"></div>
+                </div>
+                <button class="cart" onclick="toggleCart(true)">
+                    <i class="icon fa fa-cart-shopping"></i>
+                    <p id="cart-counter">0</p>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+    <!-- Random tip modal stucture -->
+     <div class="wrapper">
+        <div id="tipModal" class="modal">
+            <div class="modal-content">
+                <span class="close">
+                    <i class="fa fa-close"></i>
+                </span>
+                <img src="" alt="Tip Image" id="tipImage" style="max-width: 300px; height: 300px;">
+                <p id="tipText"></p>
+            </div>
+         </div>
+     </div>
+     
+     <!-- Order Section -->
+
+        <section class="section-content" id="order">
+            <h1>Products</h1>
+            <div class="wrapper"><div class="icon"></div></div>
+            
+            <div id="productsContainer"></div>
+
+            <div id="cartSection" class="cart-main">
+                <h2>Your Cart</h2>
+                <button id="close-cart" onclick="toggleCart(false)">
+                    <i class="fa fa-x fa-2x"></i>
+                </button>
+                <div id="cart"></div>
+                <p class="total" id="grandTotal">
+                    Grand Total: Ksh 0
+                </p>
+                <button class="checkout-btn" onclick="checkout()">Proceed to checkout</button>
+                <p id="cart-message"></p>
+            </div>
+
+        </section>
+        
+        <button id="top" onclick="scrollToTop()">
+            <i class="fa fa-arrow-up"></i>Back to Top
+        </button>
+    </div>
+
+    <div class="loader"></div>
+    
+    </main>
+
+    <footer>
+        <div class="wrapper">
+            <div class="footer-contents flex">
+                <div class="copyright flex">
+                    <span>Copyright &copy; <a href="index.htm">Imma Beadwork</a> 
+                        <script>document.write(new Date().getFullYear())</script>
+                    </span>
+                    <span>All rights reserved</span>
+                </div>
+                <div class="terms flex">
+                    <span><a href="">Terms &amp; Conditions</a> apply</span>
+                    <span><a href="">Privacy Policy</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/utils.js" defer></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/products.js" defer></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/validation.js"></script>
+    <script src="scripts/randomTip.js"></script>
+</body>
+</html>

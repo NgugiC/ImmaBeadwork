@@ -1,0 +1,141 @@
+@use 'variables' as *;
+
+// Loading Spinner
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $body-bg;
+    transition: opacity .75s, visibility .75s;
+
+    &::after{
+        content: '';
+        width: 75px;
+        height: 75px;
+        border: 15px solid $main-nav-bg;
+        border-top-color: $color-success;
+        border-radius: 50%;
+        animation: loading .75s ease infinite;
+    }
+    
+    &-hidden{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes loading {
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.center{
+    text-align: center;
+}
+
+.icon::before{
+    // content: '\f0d1';
+    font-family: FontAwesome;
+}
+
+.wrapper section{
+    position: relative;
+}
+
+.wrapper .section-content:not(:last-of-type)::after{
+    content: '';
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: $main-nav-bg;
+    height: 2px;
+    border-radius: 999px;
+    margin: auto;
+    transform: translateY(40px);
+}
+
+.section-content:not(:first-of-type){
+    margin-top: 4rem;
+}
+
+h1{
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    margin-top: 1rem;
+    font-weight: 600;
+
+    &::after{
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: #000;
+        bottom: 0;
+        left: 0;
+        border-radius: 30px;
+        transition: width 1s ease;
+    }
+
+    &:hover::after{
+        width: 100%;
+    }
+}
+
+[title]::after{
+    background: #6d8c24;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.justify-start{
+    justify-content: flex-start;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// Back to Top Button
+#top{
+    position: fixed;
+    right: 0;
+    bottom: 3rem;
+    display: none;
+    padding: 10px 15px;
+    /* font-size: 18px; */
+    background: $main-nav-bg;
+    color: $color-white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .5s;
+
+    i{
+        margin-right: .6rem;
+    }
+}

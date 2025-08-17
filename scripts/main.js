@@ -4,8 +4,6 @@ const active = document.querySelector('.right-nav li');
 const menuItems= document.querySelectorAll('.menu-item a');
 
 navbarToggler.addEventListener('click', () => {
-    navbarToggler.classList.toggle('fa-x');
-    navbarToggler.classList.toggle('fa-bars');
 
     blockMenu.classList.toggle('blockMenuVisible');
 });
@@ -35,8 +33,6 @@ window.addEventListener('scroll DOMContentLoaded', () => {
 menuItems.forEach(link => {
     link.addEventListener('click', (event) => {
         blockMenu.classList.remove('blockMenuVisible');
-        navbarToggler.classList.remove('fa-x');
-        navbarToggler.classList.add('fa-bars');
 
         // Remove active class from all links
         menuItems.forEach(link => {
@@ -61,8 +57,6 @@ menuItems.forEach(link => {
 document.onclick = (e) =>{
     if (!navbarToggler.contains(e.target) && !blockMenu.contains(e.target)){
         blockMenu.classList.remove('blockMenuVisible');
-        navbarToggler.classList.add('fa-bars');
-        navbarToggler.classList.remove('fa-x');
     }
     
     // close cart by clicking on any part of the window

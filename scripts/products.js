@@ -105,7 +105,7 @@ const products = [
 
 // Function to display products
 function displayProducts(){
-    const productsDiv = document.querySelector('#products1');
+    const productsDiv = document.querySelector('#productsContainer');
     products.forEach(product => {
         const productDiv = document.createElement('div');
         productDiv.className = 'product';

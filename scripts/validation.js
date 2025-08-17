@@ -144,7 +144,7 @@ function showMessage(message, type){
     const responseDiv = document.getElementById('responseMessage');
     responseDiv.textContent = message;
     responseDiv.style.textAlign = 'center';
-    responseDiv.style.color = type === 'success' ? 'green' : 'red';
+    responseDiv.style.color = type === 'success' ? 'green' : '#dc143c';
 
     setTimeout(() => {
         responseDiv.textContent = '';

@@ -1,0 +1,105 @@
+@use 'variables' as *;
+
+body{
+    background: $body-bg;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+img{
+    width: 100%;
+    page-break-inside: avoid;
+}
+
+.wrapper{
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.home-page{
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+        line-height: 1.6;
+    }
+
+    p{
+        line-height: 1.6;
+        margin-top: 1rem;
+        align-self: start;
+    }
+
+    .btn{
+        display: none;
+        position: absolute;
+        /* right: -60px; */
+        bottom: 12vh;
+        z-index: 2;
+        padding: .5rem 1rem;
+        /* border-radius: 50%; */
+        border: 0;
+        font-size: 1.2rem;
+        background: $main-nav-bg;
+        color: $color-white;
+        opacity: .8;
+        /* transform: scale(.3,.5); */
+        transition: 600ms ease;
+
+        &:hover, &:focus{
+            opacity: 1;
+            margin-left: 1rem;
+            cursor: pointer;
+            background: $hover-bg;
+            transform: scale(1);
+            right: 0;
+            outline: 0;
+            border: 0;
+            border-radius: 10px;
+        }
+    }
+}
+
+/* About us page */
+
+.about{
+
+    p{
+        line-height: 1.6;
+        margin-top: 1rem;
+        align-self: start;
+    }
+}
+
+main {
+    margin-bottom: auto;
+}
+
+footer{
+    background: $main-nav-bg;
+    line-height: 2rem;
+    width: 100%;
+    color: $color-white;
+    margin-top: 2rem;
+    
+    .footer-contents{
+        justify-content: space-between;
+
+        .copyright, .terms{
+            gap: 1rem; 
+        
+            span a{
+                color: $color-white;
+                
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }  
+}
+

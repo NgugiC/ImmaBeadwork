@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="images/Logo.svg" as="image" type="image/svg+xml" media="(prefers-color-scheme: light)">
+    <link rel="preload" href="images/Logo_white_bg.svg" as="image" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+    <!-- Favicon -->
+    <link id="favicon" rel="icon" href="images/Logo.svg" type="image/svg+xml">
+    <title>Imma Beadwork | Contacts</title>
+    <link rel="stylesheet" href="styles/css/all.min.css">
+    <link rel="stylesheet" href="styles/css/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <meta name="google-site-verification" content="eflNTj5KiQharxuSuzz39nGr0Gx-j0GzHnynmoWbZ68" />
+</head>
+<body id="content">
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="logo-menu wrapper flex">
+            <ul>
+                <li class="logo">  
+                    <a class="flex justify-start" href="index.htm"><img src="images/Logo.svg" alt="Logo"><span> Imma Beadwork</span></a></li>
+            </ul>
+            <ul class="menu flex right-nav">
+                <li class="menu-item"><a href="index.htm" aria-label="Go to home section">Home</a></li>
+                <li class="menu-item"><a href="products.htm">Products</a></li>
+                <li class="menu-item"><a href="contacts.htm">Contacts</a></li>
+                <li class="menu-item"><a href="about.htm">About</a></li>
+            </ul>
+            <div class="block-menu-toggler">
+                <span class="bars" aria-label="Toggle navigation menu"></span>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="categories">
+                <div class="dropdown">
+                    <select name="categories" id="categories">
+                        <optgroup>
+                            <option value="1" disabled selected>Categories</option>
+                        </optgroup>
+                        
+                        <option value="2">Keyholders</option>
+                        <option value="3">Phone Covers</option>
+                        <option value="4">Bracelets</option>
+                    </select>
+                </div>
+                <div class="search">
+                    <input type="search" id="searchBar" placeholder="Search products..." oninput="search_input()">
+                    <i class="icon-search fa fa-magnifying-glass" onclick="search_input()"></i>
+                    <div id="search_results"></div>
+                </div>
+                <button class="cart" onclick="toggleCart(true)">
+                    <i class="icon fa fa-cart-shopping"></i>
+                    <p id="cart-counter">0</p>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+    <!-- Cart Section -->
+
+       <div id="cartSection" class="cart-main">
+            <h2>Your Cart</h2>
+            <button id="close-cart" onclick="toggleCart(false)">
+                <i class="fa fa-x fa-2x"></i>
+            </button>
+            <div id="cart"></div>
+            <p class="total" id="grandTotal">
+                Grand Total: Ksh 0
+            </p>
+            <button class="checkout-btn" onclick="checkout()">Proceed to checkout</button>
+            <p id="cart-message"></p>
+        </div>
+       
+       <!-- Contacts Section -->
+        
+        <section class="section-content" id="contacts">
+            <form class="contact-form" id="contactForm" method="post" action="https://formspree.io/f/xblddgvp">
+                <h1>Leave Us a message</h1>
+                <div class="inputArea flex">
+                    <div class="input">
+                        <input type="text" id="name" name="name" autocomplete="off" placeholder="Name">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input">
+                        <input type="email" id="email" name="email" autocomplete="off" placeholder="Email">
+                        <label for="email" id="emailLabel">Email</label>
+                    </div>
+                    <div class="input">
+                        <textarea id="message" name="message" placeholder="Message"></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    
+                    <input type="submit" value="Send" name="submit">
+
+                    <!-- Modal -->
+                     <div id="modal">
+                        <div id="modalContent">
+                            <!-- <span id="closeModal">&times;</span> -->
+                            <p id="modalMsg"></p>
+                        </div>
+                     </div>
+                     <div id="responseMessage"></div>
+                </div>
+            </form>
+        
+            <div class="socials center">
+                <div class="tooltip">
+                    <a target="_blank" href="https://wa.me/254707505452"><i name="WhatsApp" class="fab fa-2x fa-whatsapp"></i><span class="tooltip-text">WhatsApp</span></a>
+                </div>
+                <!-- To Do: Add appropriate Tiktok handle -->
+                <div class="tooltip"><a target="_blank" href="https://www.facebook.com/rahab.ngugi.35"><i name="Facebook" class="fab fa-2x fa-facebook-f"></i><span class="tooltip-text">Facebook</span></a></div>
+                <!-- <div class="tooltip"><a target="_blank" href="https://www.tiktok.com/rahab.ngugi"><i name="Tiktok" class="fab fa-2x fa-tiktok"></i><span class="tooltip-text">Tiktok</span></a></div> -->
+            </div>
+        </section>        
+        
+        <button id="top" onclick="scrollToTop()">
+            <i class="fa fa-arrow-up"></i>Back to Top
+        </button>
+    </div>
+
+    <div class="loader"></div>
+    
+    </main>
+    
+    <footer>
+        <div class="wrapper">
+            <div class="footer-contents flex">
+                <div class="copyright flex">
+                    <span>Copyright &copy; <a href="index.htm">Imma Beadwork</a> 
+                        <script>document.write(new Date().getFullYear())</script>
+                    </span>
+                    <span>All rights reserved</span>
+                </div>
+                <div class="terms flex">
+                    <span><a href="">Terms &amp; Conditions</a> apply</span>
+                    <span><a href="">Privacy Policy</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/utils.js" defer></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/products.js" defer></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/validation.js"></script>
+    <script src="scripts/randomTip.js"></script>
+</body>
+</html>
