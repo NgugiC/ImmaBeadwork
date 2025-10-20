@@ -1,6 +1,10 @@
 @use 'variables' as*;
 
 @media (max-width: 900px){
+    #productsContainer {
+        column-count: 5;
+    }
+
     footer{
         padding: 10px 0;
 
@@ -109,6 +113,10 @@
 
     
     /* Products */
+    #productsContainer {
+        column-count: 4;
+    }
+
     #order{
 
         #productsContainer {
@@ -160,6 +168,10 @@
 }
 
 @media (max-width: 678px){
+    #productsContainer {
+        column-count: 3;
+    }
+
     .product{
         border-color: $mobile-nav-bg;
 
@@ -203,6 +215,14 @@
 }
 
 @media (max-width: 576px){
+    .loader {
+        background: $mobile-bg;
+
+        &::after {
+            border-color: $mobile-nav-bg;
+        }
+    }
+
     #top{
         background: $mobile-nav-bg;
     }
@@ -329,6 +349,10 @@
     }
 
     /* Order Page */
+
+    #productsContainer {
+        column-count: 2;
+    }
 
     .categories {
         grid-template-columns: 1fr auto;

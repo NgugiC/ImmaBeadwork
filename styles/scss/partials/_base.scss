@@ -10,6 +10,30 @@ body{
     position: relative;
 }
 
+.terms, .privacy {
+    p {
+        margin: 1rem 0;
+    }
+
+    ol {
+        margin-left: 1rem;
+    
+        li {
+            margin-bottom: .3rem;
+            list-style-type: i;
+        }
+    
+        ul {
+            margin: 1rem 0;
+            
+            li {
+                list-style-type: disc;
+                margin-left: 2rem;
+            }
+        }
+    }
+}
+
 img{
     width: 100%;
     page-break-inside: avoid;

@@ -3,40 +3,40 @@
 /* Products page */
 
 #productsContainer{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 4rem;
+    margin: 2rem 0 4rem;
+    display: inline-block;
+    column-count: 6;
     
     .product{
         border: 1px solid $main-nav-bg;
         border-radius: 10px;
-        margin: 10px;
-        padding: 10px;
-        min-width: 200px;
-        width: 300px;
         text-align: center;
+        break-inside: avoid;
         transition: background-color .3s ease;
+
+        &:not(:first-of-type) {
+            margin-top: 15px;
+        }
 
         &:target{
             background-color: #f9f9f9; /* Highlight the element temporarily */
         }
 
         img{
-            height: 300px;
+            // height: 300px;
             width: 100%;
-            border-radius: 10px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
         }
 
         button{
             background-color: $main-nav-bg;
             color: $color-white;
             padding: 10px 20px;
-            margin-top: 10px;
+            margin: 10px 5px;
             border: none;
             border-radius: 10px;
-            width: 100%;
+            width: calc(100% - 10px);
             cursor: pointer;
 
             .fa-cart-shopping{
