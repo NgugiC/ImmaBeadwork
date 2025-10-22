@@ -106,6 +106,7 @@ const products = [
 // Function to display products
 function displayProducts(){
     const productsDiv = document.querySelector('#productsContainer');
+    const track = document.querySelector('.carousel-track')
     products.forEach(product => {
         const productDiv = document.createElement('div');
         productDiv.className = 'product';
@@ -120,6 +121,14 @@ function displayProducts(){
         <i class='fa fa-cart-shopping'></i>
         Add to Cart</button>`;
         productsDiv.appendChild(productDiv);
+
+        // Carousel
+        const carouselItem = document.createElement('div')
+        carouselItem.className = 'carousel-product'
+        carouselItem.innerHTML = `
+        <img src='${product.image}' alt='${product.title}' />
+        <p>${formatPrice(product.price)}</p>`
+        track.appendChild(carouselItem)
     });
 }
 
@@ -134,6 +143,91 @@ function generateStarRating(rating) {
 
 // Initialize
 displayProducts();
+
+// Carousel
+const track = document.querySelector('.carousel-track')
+const container = track.parentElement
+const carouselProducts = document.querySelectorAll('.carousel-product')
+const prevBtn = document.querySelector('.nav.prev')
+const nextBtn = document.querySelector('.nav.next')
+
+let currentPosition = 0
+let maxScroll = 0
+
+function recalculateBounds() {
+    productWidth = document.querySelector('.carousel-product').offsetWidth + 20
+    const trackwidth = track.scrollWidth
+    const containerWidth = container.offsetWidth
+    maxScroll = containerWidth - trackwidth
+    updatePosition(currentPosition)
+}
+
+// Clamp boundaries to prevent scrolling beyond available products
+function updatePosition(newPosition) {
+    currentPosition = Math.max(Math.min(newPosition, 0), maxScroll)
+    track.style.transform = `translateX(${currentPosition}px)`
+    updateButtons()
+}
+
+// Disable buttons when at the edges
+function updateButtons() {
+    prevBtn.disabled = currentPosition === 0
+    nextBtn.disabled = currentPosition === maxScroll
+    prevBtn.style.display = prevBtn.disabled ? 'none' : 'block'
+    nextBtn.style.display = nextBtn.disabled ? 'none' : 'block'
+}
+
+// Button clicks
+prevBtn.addEventListener('click', () => {
+    updatePosition(currentPosition + productWidth)
+})
+
+nextBtn.addEventListener('click', () => {
+    updatePosition(currentPosition - productWidth)
+})
+
+// Swipe gesture logic
+let startX = 0
+let endX = 0
+
+track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX
+})
+
+track.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX
+})
+
+track.addEventListener('touchend', () => {
+    const swipeDistance = endX - startX
+
+    if (swipeDistance < -50) {
+        // Swipe left
+        updatePosition(currentPosition - productWidth)
+    }
+    else if (swipeDistance > 50) {
+        // Swipe right
+        updatePosition(currentPosition + productWidth)
+    }
+
+    track.style.transform = `translateX(${currentPosition}px)`
+})
+
+// Carousel autoplay
+let autoplayInterval = setInterval(() => {
+    if (currentPosition > maxScroll) {
+        updatePosition(currentPosition - productWidth)
+    }
+    else {
+        updatePosition(0) // Loop back to start
+    }
+}, 4000) // Every 4 seconds
+
+// Responsive recalculation on window resize
+window.addEventListener('resize', recalculateBounds)
+
+// Initial setup
+recalculateBounds()
 
 // Function to handle search input
 function search_input(){

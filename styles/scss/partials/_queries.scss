@@ -219,7 +219,8 @@
         background: $mobile-bg;
 
         &::after {
-            border-color: $mobile-nav-bg;
+            border: 15px solid $mobile-nav-bg !important;
+            border-top-color: $color-success !important;
         }
     }
 
@@ -352,6 +353,11 @@
 
     #productsContainer {
         column-count: 2;
+    }
+
+    // Carousel
+    .latest .products.carousel-track .carousel-product {
+        color: #000;
     }
 
     .categories {
